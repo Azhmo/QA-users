@@ -6,7 +6,8 @@ import {ResponsesComponent} from './survey/responses/responses.component';
 export const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'responses', component: ResponsesComponent },
-  { path: '', redirectTo: 'survey', pathMatch: 'full' }
+  { path: '', redirectTo: 'survey', pathMatch: 'full' },
+  { path: '**', redirectTo: 'survey'}
 ];
 
 @NgModule({
