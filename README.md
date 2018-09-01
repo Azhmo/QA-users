@@ -1,6 +1,7 @@
 # QAUsers
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Run 'npm install' and you are ready to go.
 
 The project has 2 pages:
 - Survey
