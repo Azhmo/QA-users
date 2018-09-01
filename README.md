@@ -6,5 +6,6 @@ The project has 2 pages:
 - Survey
 - Responses
 
-In the Survey page you choose a user and answer the questions by clickin on the submit button
+In the Survey page you choose a user and answer the questions by clicking on the submit button.
+
 In the Responses page you choose the answers for which you want to get the users count.
