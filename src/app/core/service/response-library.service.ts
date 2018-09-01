@@ -20,7 +20,8 @@ export class ResponseLibrary {
     this.desiredResponsesUsers = [];
     for (let i = 0; i < sortedResponses.length; i += 2) {
       if (sortedResponses[i].getQuestionId() === '1' && sortedResponses[i].getAnsweredIndex() === responseArray[0]
-          && sortedResponses[i + 1].getQuestionId() === '2' && sortedResponses[i + 1].getAnsweredIndex() === responseArray[1]) {
+          && sortedResponses[i + 1].getQuestionId() === '2' && sortedResponses[i + 1].getAnsweredIndex() === responseArray[1] &&
+        this.desiredResponsesUsers.indexOf(sortedResponses[i].getUserId()) === -1) {
         this.desiredResponsesUsers.push(sortedResponses[i].getUserId());
       }
     }
