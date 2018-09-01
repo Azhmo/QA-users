@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/_theming';
+
+@include mat-core();
+$primary: mat-palette($mat-deep-purple);
+$accent: mat-palette($mat-amber, A200, A100, A400);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+* {
+  font-weight: bold;
+}
+
