@@ -1,0 +1,29 @@
+@mixin centerDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container{
+  margin-top: 10px;
+}
+
+mat-radio-button {
+  display: block;
+}
+
+mat-card {
+  @include centerDiv;
+  span{
+    font-size: 30px;
+  }
+}
+
+.desiredAnswer {
+  display: inline-block;
+}
+
+button {
+  margin-top: 20px;
+}

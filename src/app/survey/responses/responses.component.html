@@ -1,0 +1,21 @@
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-6'>
+      <div *ngFor = 'let question of questionResponses; let i = index'>
+        <p *ngIf = 'i === 0'>How many users own a smartphone with </p>
+        <p *ngIf = 'i === 1'>and they travel </p>
+        <mat-radio-group [(ngModel)]="desiredResponses[i]">
+          <mat-radio-button color="primary" *ngFor = 'let answer of question.getAnswers()' [value] = 'question.getAnswers().indexOf(answer)'>{{answer}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <button type='button'
+              (click)='getDesiredResponseCount()'
+              color="primary"
+              mat-raised-button>Get Count
+      </button>
+    </div>
+    <div class = 'col-md-6'>
+      <mat-card><span>{{desiredResponseCount}}</span> user(s)</mat-card>
+    </div>
+  </div>
+</div>

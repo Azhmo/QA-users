@@ -1,0 +1,31 @@
+<div class = 'container'>
+  <p>Here you can answer the questions by selecting a user from the dropdown.</p>
+<form [formGroup]="group">
+  <div class = 'row'>
+    <mat-form-field>
+      <p>Select user</p>
+      <mat-select formControlName="userId">
+        <mat-option *ngFor="let user of users"
+                    [value]='user.getId()'>{{user.getEmail()}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div formArrayName='responses'>
+    <div class="row" *ngFor = "let question of questions;  let i = index">
+      <div [formGroupName]="i">
+        <p>{{question.getQuestion()}}</p>
+        <mat-radio-group formControlName="answeredIndex">
+          <mat-radio-button color="primary" *ngFor = 'let answer of question.getAnswers()' [value] = 'question.getAnswers().indexOf(answer)'>{{answer}}</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    </div>
+  </div>
+  <button type='button'
+          (click)='sendResponse()'
+          color="primary"
+          [disabled]="!group.valid"
+          mat-raised-button>Submit
+  </button>
+</form>
+</div>
